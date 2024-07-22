@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/wvfp/Files/SDL/SDL_Project/build",
+  "command": "/usr/local/bin/clang++ -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application -g -std=gnu++17 -o CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o -c /home/wvfp/Files/SDL/SDL_Project/src/mainApplication.cpp",
+  "file": "/home/wvfp/Files/SDL/SDL_Project/src/mainApplication.cpp",
+  "output": "CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o"
+},
+{
+  "directory": "/home/wvfp/Files/SDL/SDL_Project/build",
+  "command": "/usr/local/bin/clang++ -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application -g -std=gnu++17 -o Application/CMakeFiles/app.dir/Application.cpp.o -c /home/wvfp/Files/SDL/SDL_Project/Application/Application.cpp",
+  "file": "/home/wvfp/Files/SDL/SDL_Project/Application/Application.cpp",
+  "output": "Application/CMakeFiles/app.dir/Application.cpp.o"
+},
+{
+  "directory": "/home/wvfp/Files/SDL/SDL_Project/build",
+  "command": "/usr/local/bin/clang++ -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application -g -std=gnu++17 -o Application/CMakeFiles/app.dir/PushButton.cpp.o -c /home/wvfp/Files/SDL/SDL_Project/Application/PushButton.cpp",
+  "file": "/home/wvfp/Files/SDL/SDL_Project/Application/PushButton.cpp",
+  "output": "Application/CMakeFiles/app.dir/PushButton.cpp.o"
+},
+{
+  "directory": "/home/wvfp/Files/SDL/SDL_Project/build",
+  "command": "/usr/local/bin/clang++ -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application -g -std=gnu++17 -o Application/CMakeFiles/app.dir/Texture.cpp.o -c /home/wvfp/Files/SDL/SDL_Project/Application/Texture.cpp",
+  "file": "/home/wvfp/Files/SDL/SDL_Project/Application/Texture.cpp",
+  "output": "Application/CMakeFiles/app.dir/Texture.cpp.o"
+},
+{
+  "directory": "/home/wvfp/Files/SDL/SDL_Project/build",
+  "command": "/usr/local/bin/clang++ -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application -g -std=gnu++17 -o Application/CMakeFiles/app.dir/Widget.cpp.o -c /home/wvfp/Files/SDL/SDL_Project/Application/Widget.cpp",
+  "file": "/home/wvfp/Files/SDL/SDL_Project/Application/Widget.cpp",
+  "output": "Application/CMakeFiles/app.dir/Widget.cpp.o"
+}
+]

@@ -1,0 +1,9 @@
+# ninja log v5
+2	665	1721617350746365584	CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o	ee89e515cfc27edb
+2	660	1721617219444682998	Application/CMakeFiles/app.dir/Application.cpp.o	f6bfb251979cecb
+2	46	1721607939317753606	Application/CMakeFiles/app.dir/PushButton.cpp.o	f25d494b25104a6e
+660	676	1721617219465682944	Application/libapp.a	fd3e6cdcbff0dbc1
+666	764	1721617350848365349	SDL_Project	1ede2a57a97a4fc4
+2	644	1721616191308624084	Application/CMakeFiles/app.dir/Texture.cpp.o	2e6f09a4645b26fe
+3	653	1721616755419159256	Application/CMakeFiles/app.dir/Widget.cpp.o	c0f3af8ef1dd4bb3
+1	4	0	clean	a31eedcededa8236
