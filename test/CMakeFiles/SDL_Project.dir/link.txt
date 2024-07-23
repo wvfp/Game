@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o -o SDL_Project   -L/home/wvfp/Files/SDL/SDL_Project/SYSTEM  -L/home/wvfp/Files/SDL/SDL_Project/Dependences/lib  -Wl,-rpath,/home/wvfp/Files/SDL/SDL_Project/SYSTEM:/home/wvfp/Files/SDL/SDL_Project/Dependences/lib -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf Application/libapp.a 

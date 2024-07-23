@@ -1,2 +1,0 @@
-/usr/bin/ar qc libapp.a CMakeFiles/app.dir/Application.cpp.o CMakeFiles/app.dir/PushButton.cpp.o CMakeFiles/app.dir/Texture.cpp.o CMakeFiles/app.dir/Widget.cpp.o
-/usr/bin/ranlib libapp.a

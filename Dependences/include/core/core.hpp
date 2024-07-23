@@ -1,7 +1,6 @@
 #ifndef _CORE_HPP_
 #define _CORE_HPP_
 
-//防止编译
 //SDL2所需头文件
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>

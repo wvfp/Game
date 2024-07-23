@@ -1,9 +1,8 @@
 # ninja log v5
-2	665	1721617350746365584	CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o	ee89e515cfc27edb
-2	660	1721617219444682998	Application/CMakeFiles/app.dir/Application.cpp.o	f6bfb251979cecb
-2	46	1721607939317753606	Application/CMakeFiles/app.dir/PushButton.cpp.o	f25d494b25104a6e
-660	676	1721617219465682944	Application/libapp.a	fd3e6cdcbff0dbc1
-666	764	1721617350848365349	SDL_Project	1ede2a57a97a4fc4
-2	644	1721616191308624084	Application/CMakeFiles/app.dir/Texture.cpp.o	2e6f09a4645b26fe
-3	653	1721616755419159256	Application/CMakeFiles/app.dir/Widget.cpp.o	c0f3af8ef1dd4bb3
-1	4	0	clean	a31eedcededa8236
+2	720	1721720842178070207	Application/CMakeFiles/app.dir/PushButton.cpp.o	269d86287efdfc60
+2	774	1721720842231073483	Application/CMakeFiles/app.dir/Application.cpp.o	e794ac58c091727f
+3	771	1721720842228073297	Application/CMakeFiles/app.dir/Widget.cpp.o	343bd67a259c9ae5
+2	775	1721720842232073545	Application/CMakeFiles/app.dir/Texture.cpp.o	80d10f9fdc13bba2
+2	766	1721720849193501339	CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o	a0461285e284a8cd
+775	813	1721720842269075831	Application/libapp.a	6954efeb333cd140
+1	83	1721721094759792671	SDL_Project	49a9b31430c13c81
