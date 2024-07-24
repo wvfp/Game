@@ -12,6 +12,11 @@ void RendererPtrDeleter(SDL_Renderer* render){
     return;
 }
 
+void FontPtrDeleter(TTF_Font* font){
+    TTF_CloseFont(font);
+    font = nullptr;
+    return;
+}
 
 Application::Application(std::string name,SDL_Rect pos_size):WindowName(name),
 WindowPos_Size(pos_size){
@@ -22,7 +27,7 @@ WindowPos_Size(pos_size){
     WinddowPtrDeleter);
     render = RendererPtr(SDL_CreateRenderer(window.get(),-1,0),RendererPtrDeleter);
     SDL_RenderSetLogicalSize(render.get(),1280,960);
-    font = TTF_OpenFont("./res/Fonts/game_ttf2.ttf",128);
+    font = FontPtr(TTF_OpenFont("./res/Fonts/game_ttf2.ttf",128),FontPtrDeleter);
 
 }
 
@@ -39,8 +44,22 @@ void Application::event_handle(SDL_Event* event){
 void Application::present(){
     	SDL_RenderPresent(render.get());
 }
+//对设置进行统一
+void Application::setDisplay(){
+
+    SDL_Rect p={0,0,WindowPos_Size.w,WindowPos_Size.h};
+    //SDL_RenderSetViewport(render.get(),&p);
+
+    SDL_DisplayMode dm;
+    SDL_GetWindowDisplayMode(window.get(),&dm);
+    if(dm.w<dm.h)
+        std::swap(dm.w,dm.h);
+    SDL_SetWindowDisplayMode(window.get(),&dm);
+    SDL_RenderSetLogicalSize(render.get(),WindowPos_Size.w,WindowPos_Size.h);
+    SDL_RenderSetViewport(render.get(),&p);
+}
 
 Application::~Application(){
-    TTF_CloseFont(font);
     SDL_Quit();
 }
+

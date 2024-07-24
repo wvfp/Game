@@ -18,6 +18,11 @@ int main(int argc, char *argv[])
 			{
 			case SDL_QUIT:
 				running = false;
+				break;
+			case SDL_MOUSEBUTTONUP:
+				std::cout<<"x:"<<e.button.x<<std::endl;
+				std::cout<<"y:"<<e.button.y<<std::endl;
+				break;
 			default:
 				continue;
 			}
@@ -25,7 +30,7 @@ int main(int argc, char *argv[])
 		app->event_handle(&e);
 		app->draw();
 		app->present();
-		SDL_Delay(Delay_Time);
+		//SDL_Delay(Delay_Time);
 	}
 	return 0;
 }

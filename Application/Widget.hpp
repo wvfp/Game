@@ -40,6 +40,8 @@ public:
     void addChild(WidgetPtr w){
         ChildWidgetList.push_back(w);
         w->setParent(WidgetPtr(this));
+        if(w->font==nullptr&&font)
+            w->setFont(font);
         return;
     }
     void setBackgroundColor(SDL_Color color){
@@ -67,17 +69,20 @@ public:
         SDL_Point p = getPrimaryPos();
         return SDL_Rect({p.x,p.y,Pos_Size.w,Pos_Size.h});
     }
-
-
+    RendererPtr getRender(){
+        return render;
+    }
+    void setFont(FontPtr f){
+        font = f;
+        return;
+    }
 protected:
     //子类可见
     RendererPtr render;
-    
-private:
-    //子类不可见
-    SDL_Rect Pos_Size;
     WidgetPtr parent;
     WidgetPtrList ChildWidgetList;
+    FontPtr font;
+    SDL_Rect Pos_Size;
     bool _hide;
     bool _hide_frame;
     SDL_Color bg_color;

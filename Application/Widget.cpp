@@ -24,11 +24,13 @@ void Widget::draw(){
     //判断是否隐藏
     if(!isHide()){
         SDL_Rect preRect;
-
         if(parent){
             SDL_RenderGetViewport(render.get(),&preRect);
             SDL_Rect nowRect = getPrimaryRect();
-            SDL_RenderSetViewport(render.get(),&nowRect);
+            SDL_Rect edge=nowRect;
+            edge.w=std::min(preRect.w+preRect.x,nowRect.w+nowRect.x)-nowRect.x;
+            edge.h=std::min(preRect.h+preRect.y,nowRect.h+nowRect.y)-nowRect.y;
+            SDL_RenderSetViewport(render.get(),&edge);
         }
         //设置widget的背景
         //保存render的颜色
@@ -38,7 +40,7 @@ void Widget::draw(){
         //设置render为widget的背景颜色
         SDL_SetRenderDrawColor(render.get(),bg_color.r,bg_color.g,bg_color.b,bg_color.a);
         //填颜色
-        SDL_RenderFillRect(render.get(),&Pos_Size);   
+        SDL_RenderFillRect(render.get(),&Pos_Size);  
         //判断是不是有边框
         if(!isHideFrame()){
             //绘制边框
@@ -62,5 +64,6 @@ void Widget::drawChild(){
 void Widget::event_handle(SDL_Event* event){
     for(auto i:ChildWidgetList)
         i->event_handle(event);
+    //std::cout<<"event_handle"<<std::endl;
     return;
 }

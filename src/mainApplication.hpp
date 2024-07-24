@@ -2,7 +2,7 @@
 #include <Texture.hpp>
 #include <Widget.hpp>
 #include <iostream>
-
+#include <PushButton.hpp>
 class mainApplication:public Application {
 public:
     using Application::render;
@@ -17,7 +17,9 @@ public:
     }
     void draw();
     void init();
+    void event_handle(SDL_Event *);
     void drawWidgets();
+
 private:
     WidgetPtrList widgets;
     TexturePtr texture;
@@ -25,6 +27,8 @@ private:
 };
 
 void mainApplication::draw(){
+    //更新显示状态
+    setDisplay();
     SDL_SetRenderDrawColor(render.get(),0x0,0xff,0xa6,0xff);
     SDL_RenderClear(render.get());
 
@@ -35,8 +39,8 @@ void mainApplication::draw(){
     SDL_RenderCopy(render.get(),texture.get(),NULL,&srect);
     srect = {0,0,250,30};
     SDL_RenderCopy(render.get(),tex.get(),NULL,&srect);
-    SDL_Point p = (*(widgets.begin())).get()->getPos();
-    (*(widgets.begin())).get()->rePos(p.x+1,p.y+1);
+    //SDL_Point p = (*(widgets.begin())).get()->getPos();
+    //(*(widgets.begin())).get()->rePos(p.x+1,p.y+1);
     drawWidgets();
 }
 
@@ -49,17 +53,40 @@ void  mainApplication::init(){
     w3->setBackgroundColor({0x0,0xff ,0x0,0xff});
     w2->addChild(w3);
     w1->addChild(w2);
+    PushButtonPtr button{new PushButton(render,{40,40,200,100})};
+    button->setBackgroundColor({0x0,0x0,0xff,0xff});
+    widgets.push_back(button);
+
+    Action<PushButtonEvent> action{
+        [&](void*)->void{
+            std::cout<<"clicked"<<std::endl;
+        },
+        PushButtonEvent::ON_CLICKED,
+        std::string("click")
+    };
+    action();
+    button->bindAction(action);
+    button->setIcon("./res/Pictures/a1.jpg");
     std::cout<<"Init"<<std::endl;
     widgets.push_back(w1);    
     
     std::string ImgPath="./res/Pictures/a2.webp";
     texture = LoadImageTexture(render,ImgPath.c_str());
+    SDL_SetTextureColorMod(texture.get(),50,55,55);
+    SDL_SetTextureColorMod(texture.get(),255,255,255);
     std::string str="Hello Games!";
     tex = LoadTextTexture(render,str,font,{0x0,0x0,0x0,0xff});
 }
 
+void mainApplication::event_handle(SDL_Event* e){
+    for(auto i:widgets){
+        i->event_handle(e);
+    }
+}
+
+
 void mainApplication::drawWidgets(){
-    for(auto i:widgets)
-        i->draw();
+    for(auto i = widgets.rbegin();i!=widgets.rend();i++)
+        (*i)->draw();
     return;
 }

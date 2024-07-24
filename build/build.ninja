@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_SDL_Project: phony || cmake_object_order
 
 build CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o: CXX_COMPILER__SDL_Project_unscanned_Debug /home/wvfp/Files/SDL/SDL_Project/src/mainApplication.cpp || cmake_object_order_depends_target_SDL_Project
   DEP_FILE = CMakeFiles/SDL_Project.dir/src/mainApplication.cpp.o.d
-  FLAGS = -g -std=gnu++17
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application
   OBJECT_DIR = CMakeFiles/SDL_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/SDL_Project.dir/src
@@ -113,28 +113,35 @@ build cmake_object_order_depends_target_app: phony || Application/CMakeFiles/app
 
 build Application/CMakeFiles/app.dir/Application.cpp.o: CXX_COMPILER__app_unscanned_Debug /home/wvfp/Files/SDL/SDL_Project/Application/Application.cpp || cmake_object_order_depends_target_app
   DEP_FILE = Application/CMakeFiles/app.dir/Application.cpp.o.d
-  FLAGS = -g -std=gnu++17
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application
   OBJECT_DIR = Application/CMakeFiles/app.dir
   OBJECT_FILE_DIR = Application/CMakeFiles/app.dir
 
 build Application/CMakeFiles/app.dir/PushButton.cpp.o: CXX_COMPILER__app_unscanned_Debug /home/wvfp/Files/SDL/SDL_Project/Application/PushButton.cpp || cmake_object_order_depends_target_app
   DEP_FILE = Application/CMakeFiles/app.dir/PushButton.cpp.o.d
-  FLAGS = -g -std=gnu++17
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application
   OBJECT_DIR = Application/CMakeFiles/app.dir
   OBJECT_FILE_DIR = Application/CMakeFiles/app.dir
 
 build Application/CMakeFiles/app.dir/Texture.cpp.o: CXX_COMPILER__app_unscanned_Debug /home/wvfp/Files/SDL/SDL_Project/Application/Texture.cpp || cmake_object_order_depends_target_app
   DEP_FILE = Application/CMakeFiles/app.dir/Texture.cpp.o.d
-  FLAGS = -g -std=gnu++17
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application
   OBJECT_DIR = Application/CMakeFiles/app.dir
   OBJECT_FILE_DIR = Application/CMakeFiles/app.dir
 
 build Application/CMakeFiles/app.dir/Widget.cpp.o: CXX_COMPILER__app_unscanned_Debug /home/wvfp/Files/SDL/SDL_Project/Application/Widget.cpp || cmake_object_order_depends_target_app
   DEP_FILE = Application/CMakeFiles/app.dir/Widget.cpp.o.d
-  FLAGS = -g -std=gnu++17
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application
+  OBJECT_DIR = Application/CMakeFiles/app.dir
+  OBJECT_FILE_DIR = Application/CMakeFiles/app.dir
+
+build Application/CMakeFiles/app.dir/tools.cpp.o: CXX_COMPILER__app_unscanned_Debug /home/wvfp/Files/SDL/SDL_Project/Application/tools.cpp || cmake_object_order_depends_target_app
+  DEP_FILE = Application/CMakeFiles/app.dir/tools.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -isystem /home/wvfp/Files/SDL/SDL_Project/Dependences/include -isystem /home/wvfp/Files/SDL/SDL_Project/Application
   OBJECT_DIR = Application/CMakeFiles/app.dir
   OBJECT_FILE_DIR = Application/CMakeFiles/app.dir
@@ -147,7 +154,7 @@ build Application/CMakeFiles/app.dir/Widget.cpp.o: CXX_COMPILER__app_unscanned_D
 #############################################
 # Link the static library Application/libapp.a
 
-build Application/libapp.a: CXX_STATIC_LIBRARY_LINKER__app_Debug Application/CMakeFiles/app.dir/Application.cpp.o Application/CMakeFiles/app.dir/PushButton.cpp.o Application/CMakeFiles/app.dir/Texture.cpp.o Application/CMakeFiles/app.dir/Widget.cpp.o
+build Application/libapp.a: CXX_STATIC_LIBRARY_LINKER__app_Debug Application/CMakeFiles/app.dir/Application.cpp.o Application/CMakeFiles/app.dir/PushButton.cpp.o Application/CMakeFiles/app.dir/Texture.cpp.o Application/CMakeFiles/app.dir/Widget.cpp.o Application/CMakeFiles/app.dir/tools.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Application/CMakeFiles/app.dir
   POST_BUILD = :
