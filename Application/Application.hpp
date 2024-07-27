@@ -14,8 +14,10 @@ using FontPtr = std::shared_ptr<TTF_Font>;
 void WinddowPtrDeleter(SDL_Window*);
 //智能指针 RendererPtr 的deleter
 void  RendererPtrDeleter(SDL_Renderer*);
-
+//智能指针 FontPtr 的deleter
+void  FontPtrDeleter(TTF_Font*);
 //封装SDL的初始化操作，以及相关指针
+
 class Application{
 public: 
     Application(std::string name,SDL_Rect pos_size);

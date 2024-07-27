@@ -4,8 +4,8 @@ constexpr int Delay_Time = 10;
 
 int main(int argc, char *argv[])
 {
-	std::string name{"Hello Window"};
-	SDL_Rect size={SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,1960,1200};
+	std::string name{"Square Adventure"};
+	SDL_Rect size={SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,1920,1440};
 	Application *app=new mainApplication(name,size);
 
 	bool running = true;

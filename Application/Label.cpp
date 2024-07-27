@@ -20,6 +20,10 @@ void Label::setTextColor(SDL_Color c){
         text = LoadTextWrappedTexture(render,text_content,font,text_color);
 }
 
+void Label::setFont(std::string path){
+    font = FontPtr(TTF_OpenFont(path.c_str(),20),FontPtrDeleter);
+}
+
 void Label::setFont(FontPtr f){
     font = f;
     return;

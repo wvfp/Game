@@ -1,9 +1,12 @@
+
 #include <Application.hpp>
 #include <Texture.hpp>
 #include <Widget.hpp>
 #include <iostream>
 #include <PushButton.hpp>
 #include <Label.hpp>
+#include "../startMenuWidget/startMenuWidget.hpp"
+#include <WidgetMaker.hpp>
 class mainApplication:public Application {
 public:
     using Application::render;

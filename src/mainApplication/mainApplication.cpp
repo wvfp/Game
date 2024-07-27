@@ -9,9 +9,13 @@ void mainApplication::draw(){
 }
 
 void  mainApplication::init(){
-    WidgetPtr w1{new Widget(render,{0,0,WindowPos_Size.w,WindowPos_Size.h})};
-    w1->setBackgroundColor({0xff,0xff,0xff,0xff});
-    widgets.push_back(w1);
+    WidgetPtr mainWidget{new Widget(render,{0,0,640,480})};
+    mainWidget->setBackgroundColor({0xff,0xff,0xff,0xff});
+    widgets.push_back(mainWidget);
+    std::shared_ptr<startMenuWidget> w{new startMenuWidget(render,{0,0,640,480})};
+    mainWidget->addChild(w);
+    w->setFont(font);
+    w->init();
 }
 
 void mainApplication::event_handle(SDL_Event* event){

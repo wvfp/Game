@@ -1,0 +1,20 @@
+<widget>
+    <name>startMenuWidget</name>
+    <position x="0" y="0"></position>
+    <size width="640" height="480"></size>
+    <color r="255" g="255" b="255"></color>
+    <label>
+        <position x="160" y="40"></position>
+        <size width="120" height="24"></size>
+        <text>方块大冒险</text>
+        <font src="res/Fonts/game_ttf2.ttf"></font>
+        <color r="255" g="255" b="255"></color>
+    </label>
+    <label>
+        <position x="600" y="470"></position>
+        <size width="30" height="5"></size>
+        <text>作者: wvfp</text>
+        <font src="res/Fonts/game_ttf2.ttf"></font>
+        <color r="255" g="255" b="255"></color>
+    </label>
+</widget>

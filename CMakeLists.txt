@@ -16,7 +16,8 @@ include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/Application)
 link_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/Dependences/lib)
 add_subdirectory(Application)
 add_subdirectory(src/mainApplication)
+add_subdirectory(src/startMenuWidget)
 
 add_executable(SquareAdventure "src/main.cpp")
 
-target_link_libraries(SquareAdventure main SDL2main SDL2 SDL2_test app SDL2_image SDL2_ttf  )
+target_link_libraries(SquareAdventure main startmenu SDL2main SDL2 SDL2_test app SDL2_image SDL2_ttf)

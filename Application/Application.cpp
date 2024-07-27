@@ -23,11 +23,11 @@ WindowPos_Size(pos_size){
     SDL_Init(SDL_INIT_EVERYTHING);
     IMG_Init(IMG_INIT_JPG/*|IMG_INIT_JPG|IMG_INIT_WEBP*/);
     TTF_Init();
-    window = WindowPtr(SDL_CreateWindow(name.c_str(),WindowPos_Size.x,WindowPos_Size.y,WindowPos_Size.w,WindowPos_Size.h,SDL_WINDOW_RESIZABLE),
+    window = WindowPtr(SDL_CreateWindow(name.c_str(),WindowPos_Size.x,WindowPos_Size.y,WindowPos_Size.w,WindowPos_Size.h,SDL_WINDOW_SHOWN),
     WinddowPtrDeleter);
     render = RendererPtr(SDL_CreateRenderer(window.get(),-1,0),RendererPtrDeleter);
     SDL_RenderSetLogicalSize(render.get(),640,480);
-    font = FontPtr(TTF_OpenFont("./res/Fonts/game_ttf2.ttf",128),FontPtrDeleter);
+    font = FontPtr(TTF_OpenFont("./res/Fonts/7.ttf",128),FontPtrDeleter);
     WindowColor = {0,0,0,0xff};
 }
 
