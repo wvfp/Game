@@ -1,6 +1,0 @@
-/home/wvfp/Files/SDL/SDL_Project/build/CMakeFiles/SDL_Project.dir
-/home/wvfp/Files/SDL/SDL_Project/build/CMakeFiles/edit_cache.dir
-/home/wvfp/Files/SDL/SDL_Project/build/CMakeFiles/rebuild_cache.dir
-/home/wvfp/Files/SDL/SDL_Project/build/Application/CMakeFiles/app.dir
-/home/wvfp/Files/SDL/SDL_Project/build/Application/CMakeFiles/edit_cache.dir
-/home/wvfp/Files/SDL/SDL_Project/build/Application/CMakeFiles/rebuild_cache.dir

@@ -23,6 +23,7 @@ public:
     virtual void event_handle(SDL_Event*);
     virtual void present();
     virtual ~Application();
+    virtual void setColor(SDL_Color={0xff,0xff,0xff,0xff});
     void setDisplay();
 protected:
     //父类子类共有的成员
@@ -33,6 +34,7 @@ protected:
     //Attributions
     std::string WindowName;
     SDL_Rect    WindowPos_Size;
+    SDL_Color   WindowColor;
 };
 
 #endif

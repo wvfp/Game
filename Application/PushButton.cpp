@@ -2,7 +2,7 @@
 
 
 Action<PushButtonEvent> PushButton::defaultAction = Action<PushButtonEvent>(
-    [](void*)->void{},
+    [](void*)->void{/*std::cout<<"Hi"<<std::endl;*/},
     PushButtonEvent::ON_NONE,
     std::string("default")
 );
@@ -16,22 +16,29 @@ PushButton::PushButton(RendererPtr r,SDL_Rect rt):
     //按钮事件处理
 void PushButton::event_handle(SDL_Event*event){
     if(!isHide()){
+        //重置按钮状态
+        PBEvent = PushButtonEvent::ON_NONE;
+        SDL_Point p{event->motion.x,event->motion.y};
 
-        SDL_Point p{event->button.x,event->button.y};
         switch(event->type){
         case SDL_MOUSEBUTTONDOWN:
             if(isPointInRect(p,getPrimaryRect()))
-                PBEvent = PushButtonEvent(ON_CLICKED);
+                PBEvent = ON_CLICKED;
+            //std::cout<<"x:"<<event->button.x<<std::endl;
+	    	//std::cout<<"y:"<<event->button.y<<std::endl;
             break;
         case SDL_MOUSEBUTTONUP:
             if(isPointInRect(p,getPrimaryRect()))
-                PBEvent = PushButtonEvent(ON_RELEASED);
+                PBEvent = ON_RELEASED;
+            break;
         case SDL_MOUSEMOTION:
             if(isPointInRect(p,getPrimaryRect()))
-                PBEvent = PushButtonEvent(ON_SELECTED);
+                PBEvent = ON_SELECTED;
+            break;
+        default:
+            PBEvent = ON_NONE;
+            break;
         }
-        //std::cout<<int(PBEvent)<<std::endl;
-        (Action_List.front())();
         actAction();
     }
 
@@ -77,8 +84,6 @@ void PushButton::actAction(){
         }
         break;
     }
-     //重置按钮状态
-    //PBEvent = PushButtonEvent::ON_NONE;
 }
     //设置图标
 void PushButton::setIcon(TexturePtr _icon){
@@ -88,7 +93,7 @@ void PushButton::setIcon(std::string path){
     icon = LoadImageTexture(render,path);
 }
     //设置文本
-void PushButton::setText(std::string t_c,SDL_Color color,float rate){
+void PushButton::setText(std::string t_c,SDL_Color color){
     text_content = t_c;
     text_Color = color;
     if(font)
@@ -106,9 +111,16 @@ void PushButton::setTextColor(SDL_Color c){
 
 
 void PushButton::updata(){
-    if(PBEvent==PushButtonEvent::ON_SELECTED)
-        SDL_SetTextureColorMod(icon.get(),128,128,128);
-
+    switch (PBEvent)
+    {
+    case ON_SELECTED:
+    case ON_CLICKED:
+        SDL_SetTextureColorMod(icon.get(),200,200,200);
+        break;
+    default:
+        SDL_SetTextureColorMod(icon.get(),0xff,0xff,0xff);    
+        break;
+    }
 }
 void PushButton::draw(){
     updata();

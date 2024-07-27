@@ -17,6 +17,7 @@ public:
     void rePos(int x,int y);
     //进行绘制Widgwt中的元素
     virtual void draw();
+    void drawBase();
     virtual void drawChild();
     virtual void event_handle(SDL_Event*);
     inline void hide(){

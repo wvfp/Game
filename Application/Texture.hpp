@@ -15,11 +15,18 @@ void SurfacePtrDeleter(SDL_Surface*);
 TexturePtr LoadImageTexture(RendererPtr render,std::string path);
 //根据文本和字体与颜色创建一个纹理
 TexturePtr LoadTextTexture(RendererPtr render,std::string text,FontPtr font,SDL_Color color={0xff,0xff,0xff,0xff});
+//根据文本和字体与颜色创建一个纹理(支持换行符)
+TexturePtr LoadTextWrappedTexture(RendererPtr render,std::string text,
+                                  FontPtr font,SDL_Color color={0xff,0xff,0xff,0xff},std::size_t=0);
 
 //根据路径加载图片，返回一个图片表面
 SurfacePtr LoadImageSurface(RendererPtr render,std::string path);
 //根据文本和字体与颜色创建一个表面
 SurfacePtr LoadTextSurface(RendererPtr render,std::string text,FontPtr font,SDL_Color color={0xff,0xff,0xff,0xff});
+//根据文本和字体与颜色创建一个纹理(支持换行符)
+SurfacePtr LoadTextWrappedSurface(RendererPtr render,std::string text,
+                                  FontPtr font,SDL_Color color={0xff,0xff,0xff,0xff},std::size_t=0);
+
 
 
 

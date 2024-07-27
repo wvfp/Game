@@ -82,7 +82,7 @@ public:
     void setIcon(TexturePtr);
     void setIcon(std::string);
     //设置文本
-    void setText(std::string,SDL_Color={0xff,0xff,0xff,0xff},float=1.0);
+    void setText(std::string,SDL_Color={0xff,0xff,0xff,0xff});
     //设置颜色
     void setTextColor(SDL_Color);
     void addChild(WidgetPtr)=delete;

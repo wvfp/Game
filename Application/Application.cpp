@@ -23,23 +23,21 @@ WindowPos_Size(pos_size){
     SDL_Init(SDL_INIT_EVERYTHING);
     IMG_Init(IMG_INIT_JPG/*|IMG_INIT_JPG|IMG_INIT_WEBP*/);
     TTF_Init();
-    window = WindowPtr(SDL_CreateWindow(name.c_str(),WindowPos_Size.x,WindowPos_Size.y,WindowPos_Size.w,WindowPos_Size.h,SDL_WINDOW_SHOWN),
+    window = WindowPtr(SDL_CreateWindow(name.c_str(),WindowPos_Size.x,WindowPos_Size.y,WindowPos_Size.w,WindowPos_Size.h,SDL_WINDOW_RESIZABLE),
     WinddowPtrDeleter);
     render = RendererPtr(SDL_CreateRenderer(window.get(),-1,0),RendererPtrDeleter);
-    SDL_RenderSetLogicalSize(render.get(),1280,960);
+    SDL_RenderSetLogicalSize(render.get(),640,480);
     font = FontPtr(TTF_OpenFont("./res/Fonts/game_ttf2.ttf",128),FontPtrDeleter);
-
+    WindowColor = {0,0,0,0xff};
 }
 
 void Application::draw(){
-	SDL_SetRenderDrawColor(render.get(), 0x0,0x0 ,0x0, 255); // 设置绘制颜色为白色
-	SDL_RenderClear(render.get());						  // 清空渲染器
+    setDisplay();
+	SDL_SetRenderDrawColor(render.get(), WindowColor.r,WindowColor.b ,WindowColor.g, WindowColor.a); // 设置绘制颜色
+	SDL_RenderClear(render.get());						     // 用颜色填充Application绘制区域
     return;
 }
 
-void Application::event_handle(SDL_Event* event){
-
-}
 
 void Application::present(){
     	SDL_RenderPresent(render.get());
@@ -55,7 +53,7 @@ void Application::setDisplay(){
     if(dm.w<dm.h)
         std::swap(dm.w,dm.h);
     SDL_SetWindowDisplayMode(window.get(),&dm);
-    SDL_RenderSetLogicalSize(render.get(),WindowPos_Size.w,WindowPos_Size.h);
+    SDL_RenderSetLogicalSize(render.get(),640,480);
     SDL_RenderSetViewport(render.get(),&p);
 }
 
@@ -63,3 +61,11 @@ Application::~Application(){
     SDL_Quit();
 }
 
+void Application::event_handle(SDL_Event* event){
+
+}
+
+void Application::setColor(SDL_Color c){
+    WindowColor = c;
+    return ;
+}

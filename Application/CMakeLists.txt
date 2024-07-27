@@ -2,6 +2,4 @@
 file(GLOB_RECURSE APP ./  *.cpp)
 
 #将FUNCS中所有cpp编译为funcs这个lib库
-add_library(app ${APP}
-    tools.cpp
-    tools.hpp )
+add_library(app ${APP})
