@@ -8,10 +8,11 @@ Action<PushButtonEvent> PushButton::defaultAction = Action<PushButtonEvent>(
 );
 
 PushButton::PushButton(RendererPtr r,SDL_Rect rt):
-    Widget(r,rt),text_Color({0xff,0xff,0xff,0xff}),
+    Widget(r,rt),text_Color({0,0,0,0xff}),
     text_content(""),PBEvent(PushButtonEvent::ON_NONE)
 {
     Action_List.push_back(defaultAction);
+    text_rect = {0,0,rt.w,rt.h};
 }
     //按钮事件处理
 void PushButton::event_handle(SDL_Event*event){
@@ -111,14 +112,33 @@ void PushButton::setTextColor(SDL_Color c){
 
 
 void PushButton::updata(){
+
     switch (PBEvent)
     {
-    case ON_SELECTED:
     case ON_CLICKED:
+     if(!changed){
+            Pos_Size.x-=2;
+            Pos_Size.y-=2;
+            Pos_Size.w+=4;
+            Pos_Size.h+=4;
+            changed = true;
+        }
+    case ON_SELECTED:
+
         SDL_SetTextureColorMod(icon.get(),200,200,200);
+        SDL_SetTextureColorMod( text.get(),200,200,200);
+   
         break;
     default:
-        SDL_SetTextureColorMod(icon.get(),0xff,0xff,0xff);    
+        SDL_SetTextureColorMod(icon.get(),0xff,0xff,0xff);  
+        SDL_SetTextureColorMod(text.get(),0xff,0xff,0xff);  
+        if(changed){
+            Pos_Size.x+=2;
+            Pos_Size.y+=2;
+            Pos_Size.w-=4;
+            Pos_Size.h-=4;
+            changed = false;
+        }
         break;
     }
 }
@@ -150,7 +170,7 @@ void PushButton::draw(){
         }
         //绘制Button 文本
         if(text){
-            SDL_RenderCopy(render.get(),text.get(),nullptr,&Pos_Size);
+            SDL_RenderCopy(render.get(),text.get(),nullptr,&text_rect);
         }
         //判断是不是有边框
         if(!isHideFrame()){
@@ -166,4 +186,8 @@ void PushButton::draw(){
             SDL_RenderSetViewport(render.get(),&preRect);
         }
     }
+}
+
+void PushButton::setTextRect(const SDL_Rect& r){
+    text_rect = r;
 }

@@ -28,7 +28,7 @@ void startMenuWidget::initLabel(){
     SDL_Color c;
     std::string str;
     LabelPtr label;
-    for(;l!=nullptr;l=l->NextSiblingElement()){
+    for(;l!=nullptr;l=l->NextSiblingElement("label")){
         p = makePosition(l);
         r = makeRect(l);
         r.x=p.x,r.y=p.y;
@@ -38,10 +38,23 @@ void startMenuWidget::initLabel(){
         label->setFont(font);
         label->setText(str);
         label->setBackgroundColor(c);
+        label->hideFrame();
         addChild(label);
     }
 }
 
 void startMenuWidget::initPushButton(){
-
+    XMLElement *root = doc.RootElement();
+    XMLElement *but = root->FirstChildElement("button");
+    PushButtonPtr button=makePushButton(render,but,font);
+    Action<PushButtonEvent> A(
+        [](void*)->void{
+            std::cout<<"Clicked"<<std::endl;
+        },PushButtonEvent::ON_CLICKED
+    );
+    button->bindAction(A);
+    addChild(button);
+    but = but->NextSiblingElement("button");
+    button = makePushButton(render,but,font);
+    addChild(button);
 }

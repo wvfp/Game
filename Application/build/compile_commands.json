@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/wvfp/Projects/Game/Application/build",
+  "command": "/usr/bin/c++ -g -o CMakeFiles/app.dir/Application.o -c /home/wvfp/Projects/Game/Application/Application.cpp",
+  "file": "/home/wvfp/Projects/Game/Application/Application.cpp",
+  "output": "CMakeFiles/app.dir/Application.o"
+},
+{
+  "directory": "/home/wvfp/Projects/Game/Application/build",
+  "command": "/usr/bin/c++ -g -o CMakeFiles/app.dir/PushButton.o -c /home/wvfp/Projects/Game/Application/PushButton.cpp",
+  "file": "/home/wvfp/Projects/Game/Application/PushButton.cpp",
+  "output": "CMakeFiles/app.dir/PushButton.o"
+},
+{
+  "directory": "/home/wvfp/Projects/Game/Application/build",
+  "command": "/usr/bin/c++ -g -o CMakeFiles/app.dir/Texture.o -c /home/wvfp/Projects/Game/Application/Texture.cpp",
+  "file": "/home/wvfp/Projects/Game/Application/Texture.cpp",
+  "output": "CMakeFiles/app.dir/Texture.o"
+},
+{
+  "directory": "/home/wvfp/Projects/Game/Application/build",
+  "command": "/usr/bin/c++ -g -o CMakeFiles/app.dir/Widget.o -c /home/wvfp/Projects/Game/Application/Widget.cpp",
+  "file": "/home/wvfp/Projects/Game/Application/Widget.cpp",
+  "output": "CMakeFiles/app.dir/Widget.o"
+},
+{
+  "directory": "/home/wvfp/Projects/Game/Application/build",
+  "command": "/usr/bin/c++ -g -o CMakeFiles/app.dir/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o -c /home/wvfp/Projects/Game/Application/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+  "file": "/home/wvfp/Projects/Game/Application/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+  "output": "CMakeFiles/app.dir/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o"
+}
+]

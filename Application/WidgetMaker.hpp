@@ -17,6 +17,7 @@ WidgetPtr makeWidget(RendererPtr,XMLElement*);
 
 LabelPtr makeLabel(RendererPtr,std::string);
 LabelPtr makeLabel(RendererPtr,XMLElement*);
+PushButtonPtr makePushButton(RendererPtr,XMLElement*,FontPtr);
 
 SDL_Point makePosition(XMLElement*);
 SDL_Rect  makeRect(XMLElement*);

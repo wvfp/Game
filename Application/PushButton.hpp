@@ -82,7 +82,8 @@ public:
     void setIcon(TexturePtr);
     void setIcon(std::string);
     //设置文本
-    void setText(std::string,SDL_Color={0xff,0xff,0xff,0xff});
+    void setText(std::string,SDL_Color={0,0,0,0xff});
+    void setTextRect(const SDL_Rect&);
     //设置颜色
     void setTextColor(SDL_Color);
     void addChild(WidgetPtr)=delete;
@@ -91,9 +92,11 @@ private:
     PushButtonEvent PBEvent;
     TexturePtr icon;
     TexturePtr text;
+    SDL_Rect text_rect;
     std::string text_content;
     SDL_Color text_Color;
     static Action<PushButtonEvent> defaultAction;
+    bool changed = false;
 };
 
 using PushButtonPtr = std::shared_ptr<PushButton>;

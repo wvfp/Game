@@ -3,6 +3,9 @@
 Label::Label(RendererPtr r,SDL_Rect r_t)
     :Widget(r,r_t)
 {
+    text_rect = r_t;
+    text_rect.x = 0;
+    text_rect.y = 0;
 }
 void Label::setText(std::string t_c,SDL_Color color){
     text_content = t_c;
@@ -37,6 +40,10 @@ void Label::setTexture(TexturePtr t){
     return;
 }
 
+void Label::setTextRect(SDL_Rect r){
+    text_rect= r;
+}
+
 void Label::draw(){
     if(!isHide()){
         SDL_Rect preRect;
@@ -50,10 +57,10 @@ void Label::draw(){
         }
         drawBase();
         if(texture){
-            SDL_RenderCopy(render.get(),texture.get(),nullptr,&Pos_Size);
+            SDL_RenderCopy(render.get(),texture.get(),nullptr,nullptr);
         }
         if(text){
-            SDL_RenderCopy(render.get(),text.get(),nullptr,&Pos_Size);
+            SDL_RenderCopy(render.get(),text.get(),nullptr,&text_rect);
         }
         //绘制子widget
         drawChild();

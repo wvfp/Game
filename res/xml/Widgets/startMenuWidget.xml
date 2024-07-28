@@ -4,17 +4,27 @@
     <size width="640" height="480"></size>
     <color r="255" g="255" b="255"></color>
     <label>
-        <position x="160" y="40"></position>
-        <size width="120" height="24"></size>
+        <position x="200" y="40"></position>
+        <size width="240" height="80"></size>
         <text>方块大冒险</text>
         <font src="res/Fonts/game_ttf2.ttf"></font>
         <color r="255" g="255" b="255"></color>
     </label>
     <label>
-        <position x="600" y="470"></position>
-        <size width="30" height="5"></size>
+        <position x="590" y="450"></position>
+        <size width="35" height="10"></size>
         <text>作者: wvfp</text>
         <font src="res/Fonts/game_ttf2.ttf"></font>
         <color r="255" g="255" b="255"></color>
     </label>
+    <button>
+        <position x="270" y="300"></position>
+        <size width="100" height="25"></size>
+        <text x="0" y="0" w="100" h="25">开始游戏</text>
+    </button>
+    <button>
+        <position x="270" y="340"></position>
+        <size width="100" height="25"></size>
+        <text x="25" y="0" w="50" h="25">设置</text>
+    </button>
 </widget>

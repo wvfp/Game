@@ -69,6 +69,40 @@ LabelPtr makeLabel(RendererPtr render,XMLElement*xml){
     label->setText(text);
     return label; 
 }
+
+PushButtonPtr makePushButton(RendererPtr render,XMLElement* but,FontPtr font){
+    SDL_Point p;
+    SDL_Rect r;
+    std::string str;
+    PushButtonPtr button;
+    SDL_Rect t_r;
+    XMLElement* t_z;
+    const XMLAttribute * attrib;
+    if(but){
+        p = makePosition(but);
+        r = makeRect(but);
+        r.x=p.x,r.y=p.y;
+        str = makeText(but);
+        button = PushButtonPtr(new PushButton(render,r));
+        button->setFont(font);
+        button->setText(str,{0,0,0,0xff});
+        t_z = but->FirstChildElement("text");
+        attrib = t_z->FindAttribute("x");
+        t_r.x = attrib->IntValue();
+        attrib = t_z->FindAttribute("y");
+        t_r.y = attrib->IntValue();
+        attrib = t_z->FindAttribute("w");
+        t_r.w = attrib->IntValue();
+        attrib = t_z->FindAttribute("h");
+        t_r.h = attrib->IntValue();
+        button->setTextRect(t_r);
+    }
+    return button;
+}
+
+
+
+
 SDL_Point makePosition(XMLElement*xml){
     XMLElement* node=nullptr;
     const XMLAttribute* attrib=nullptr;   
@@ -126,3 +160,4 @@ std::string makeText(XMLElement*xml){
     }
     return text;
 }
+
