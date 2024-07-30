@@ -1,0 +1,24 @@
+# ninja log v5
+3	1280	1722244047658603425	Application/CMakeFiles/app.dir/Label.cpp.o	56e392e87733e90c
+894	930	1722251147151248972	src/levelSelectWidget/liblevelselect.a	1589bba3e7ace331
+939	1026	1722251258986772174	SquareAdventure	4548d0536738d8e5
+4	1401	1722244047779604553	Application/CMakeFiles/app.dir/tools.cpp.o	58a376b3224a6cc8
+868	903	1722251258863770501	src/mainApplication/libmain.a	a70adc30bdbdc59c
+2	866	1722251109043728802	CMakeFiles/SquareAdventure.dir/src/main.cpp.o	c9b0cf336bfaa8e9
+2	868	1722251258829770039	src/mainApplication/CMakeFiles/main.dir/mainApplication.cpp.o	f04242ab24a7ccb8
+1	10	0	clean	a31eedcededa8236
+2	902	1722251258864770515	src/startMenuWidget/CMakeFiles/startmenu.dir/startMenuWidget.cpp.o	6a906064dbade600
+3	1499	1722244047874605438	Application/CMakeFiles/app.dir/Widget.cpp.o	953581a0e58dbe96
+3	1220	1722244047598602866	Application/CMakeFiles/app.dir/Texture.cpp.o	1fefc536528041f2
+2	109	1722244127204246166	Application/libapp.a	b5e525bdb1ea2801
+2	894	1722251147116248494	src/levelSelectWidget/CMakeFiles/levelselect.dir/levelSelectWidget.cpp.o	80a2be55abf4061a
+902	939	1722251258900771004	src/startMenuWidget/libstartmenu.a	ce85cf53c41a332f
+3	1615	1722244047992606537	Application/CMakeFiles/app.dir/WidgetMaker.cpp.o	3fe2c9d0199f0014
+2	1397	1722244047775604515	Application/CMakeFiles/app.dir/Application.cpp.o	1488ca8b890fcbf5
+3	1570	1722244047948606127	Application/CMakeFiles/app.dir/PushButton.cpp.o	5105d9632c07b4d
+4	423	1722244046799595415	Application/CMakeFiles/app.dir/tinyxml2.cpp.o	205fec195ba25de
+3	1463	1722244047840605121	Application/CMakeFiles/app.dir/FPSControler.cpp.o	38ef3ce1611eefbc
+0	29	1722264998835288160	build.ninja	dc776a656d0b3406
+1	16	1722264998859287888	src/gameWidget/CMakeFiles/game.dir/gameWidget.cpp.o	853baad8d540ff38
+16	61	1722264998903287389	src/gameWidget/libgame.a	a247f3fee5cf787a
+61	163	1722264999004286243	SquareAdventure	2c159a053447ff7d

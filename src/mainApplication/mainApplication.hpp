@@ -6,6 +6,7 @@
 #include <PushButton.hpp>
 #include <Label.hpp>
 #include "../startMenuWidget/startMenuWidget.hpp"
+#include "../levelSelectWidget/levelSelectWidget.hpp"
 #include <WidgetMaker.hpp>
 
 class mainApplication : public Application

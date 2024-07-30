@@ -1,6 +1,8 @@
 #include "mainApplication/mainApplication.hpp"
+#include <FPSControler.hpp>
 
-constexpr int Delay_Time = 10;
+constexpr int FPS = 30;
+
 
 int main(int argc, char *argv[])
 {
@@ -10,8 +12,8 @@ int main(int argc, char *argv[])
 
 	bool running = true;
 	SDL_Event *e = new SDL_Event();	
-	SDL_Event *event = e;
-	SDL_Point p;
+	FPSControler fps(FPS);
+	fps.start();
 	while (running)
 	{
 		while (SDL_PollEvent(e))
@@ -27,8 +29,8 @@ int main(int argc, char *argv[])
 			app->event_handle(e);
 		}
 		app->draw();
+		fps.tick();
 		app->present();
-		//SDL_Delay(Delay_Time);
 	}
 	return 0;
 }

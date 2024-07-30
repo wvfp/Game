@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(SDL_Project)
+project(SquareAdventure)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -17,7 +17,13 @@ link_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/Dependences/lib)
 add_subdirectory(Application)
 add_subdirectory(src/mainApplication)
 add_subdirectory(src/startMenuWidget)
+add_subdirectory(src/levelSelectWidget)
+add_subdirectory(src/gameWidget)
 
 add_executable(SquareAdventure "src/main.cpp")
 
-target_link_libraries(SquareAdventure main startmenu SDL2main SDL2 SDL2_test app SDL2_image SDL2_ttf)
+list(APPEND compile_flag "-Wall" )
+
+target_compile_options(SquareAdventure PUBLIC ${compile_flag})
+
+target_link_libraries(SquareAdventure main startmenu levelselect game SDL2main SDL2 SDL2_test app SDL2_image SDL2_ttf)

@@ -2,19 +2,19 @@
 #include <string>
 #include <iostream>
 
-WidgetPtr makeWidget(RendererPtr render,std::string xmlpath){
+WidgetPtr makeWidget(RendererPtr render,std::string xmlpath,FontPtr f){
     XMLDocument xml;
     if(xml.LoadFile(xmlpath.c_str())){
         std::cerr<<"Error:can't load file:"<<xmlpath<<"\nerror in makeWidget"<<std::endl;
         std::abort(); 
     }
     XMLElement* widget_node = xml.RootElement();
-    WidgetPtr widget = makeWidget(render,widget_node);
+    WidgetPtr widget = makeWidget(render,widget_node,f);
     return widget;
 }
 
 
-WidgetPtr makeWidget(RendererPtr render,XMLElement* xml){
+WidgetPtr makeWidget(RendererPtr render,XMLElement* xml,FontPtr f){
     SDL_Color bg_c={0,0,0,0};
     SDL_Rect Pos_Size={0,0,0,0};    
     bg_c=makeColor(xml);
@@ -23,26 +23,30 @@ WidgetPtr makeWidget(RendererPtr render,XMLElement* xml){
     Pos_Size.x = pos.x;
     Pos_Size.y = pos.y;
     WidgetPtr widget{new Widget(render,Pos_Size)};
+    widget->setFont(f);
     widget->setBackgroundColor(bg_c);
     XMLElement *node=nullptr;
-    for(node=xml->FirstChildElement("label");node!=nullptr;node=node->NextSiblingElement()){
-        widget->addChild(makeLabel(render,node));
+    LabelPtr l;
+    for(node=xml->FirstChildElement("label");node!=nullptr;node=node->NextSiblingElement("label")){
+        l=makeLabel(render,node,f);
+        l->hideFrame();
+        widget->addChild(l);
     }
     return widget;
 }
 
-LabelPtr makeLabel(RendererPtr render,std::string xmlpath){
+LabelPtr makeLabel(RendererPtr render,std::string xmlpath,FontPtr f){
     XMLDocument xml;
     if(xml.LoadFile(xmlpath.c_str())){
         std::cerr<<"Error:can't load file:"<<xmlpath<<"\nerror in makeLabel"<<std::endl;
         std::abort(); 
     }
     XMLElement* Label_node = xml.RootElement();
-    LabelPtr label = makeLabel(render,Label_node);
+    LabelPtr label = makeLabel(render,Label_node,f);
     return label;
 }
 
-LabelPtr makeLabel(RendererPtr render,XMLElement*xml){
+LabelPtr makeLabel(RendererPtr render,XMLElement*xml,FontPtr f){
 
     SDL_Color bg_c={0,0,0,0};
     SDL_Rect Pos_Size={0,0,0,0};    
@@ -54,7 +58,7 @@ LabelPtr makeLabel(RendererPtr render,XMLElement*xml){
 
     LabelPtr label{new Label(render,Pos_Size)};
     label->setBackgroundColor(bg_c);
-
+    label->setFont(f);
     std::string text;
     XMLElement* node = xml->FirstChildElement("text");
     if(node)

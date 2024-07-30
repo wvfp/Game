@@ -18,6 +18,7 @@ void mainApplication::draw(){
 void  mainApplication::init(){
     W_State = WidgetState::STARTMENUWIDGET;
     initStartMenuWidget();
+
     return;
 }
 
@@ -35,11 +36,31 @@ void mainApplication::initStartMenuWidget(){
     std::shared_ptr<startMenuWidget> w{new startMenuWidget(render,{0,0,640,480})};
     w->setFont(font);
     w->init();
+    Action<PushButtonEvent> act(
+        [=](void*)->void{
+            this->initLevelSelectWidget();
+            this->ChangeWidget(WidgetState::LEVELSELECTWIDGET);
+        },PushButtonEvent::ON_RELEASED,"Go back"
+    );
+    w->initButtonStartGame(act);
     widgets.push_back(w);
 }
 
 void mainApplication::initLevelSelectWidget(){
-
+    static bool inited=false;
+    if(!inited){
+    std::shared_ptr<levelSelectWidget> w{new  levelSelectWidget(render,{0,0,640,480})};
+    w->setFont(font);
+    w->init();
+    Action<PushButtonEvent> act(
+        [=](void*)->void{
+            this->ChangeWidget(WidgetState::STARTMENUWIDGET);
+        },PushButtonEvent::ON_RELEASED,"Go back"
+    );
+    w->initButtonGoBack(act);
+    widgets.push_back(w);
+    inited=true;
+    }
 }
 void mainApplication::initGameWidget(){
 

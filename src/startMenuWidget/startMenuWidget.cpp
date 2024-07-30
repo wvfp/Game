@@ -10,10 +10,9 @@ startMenuWidget::startMenuWidget(RendererPtr r,SDL_Rect r_t)
 
 }
 void startMenuWidget::init(){
-    XMLElement *root = doc.RootElement();
-    bg_color = makeColor(root);
     initLabel();
     initPushButton();
+    initSettingWidget();
     return;
 }
 
@@ -46,15 +45,74 @@ void startMenuWidget::initLabel(){
 void startMenuWidget::initPushButton(){
     XMLElement *root = doc.RootElement();
     XMLElement *but = root->FirstChildElement("button");
+    PushButtonPtr button;
+    //跳过一个按钮
+    but = but->NextSiblingElement("button");
+    button = makePushButton(render,but,font);
+    addChild(button);
+    Action<PushButtonEvent> B(
+        [&](void*)->void{
+            this->setSettingWidgetState(true);
+        },PushButtonEvent::ON_CLICKED
+    );
+    button->bindAction(B);
+}
+
+void startMenuWidget::initSettingWidget(){
+    XMLElement *root = doc.RootElement();
+    XMLElement *wt = root->FirstChildElement("widget");
+    settingWidget = makeWidget(render,wt,font);
+    //返回
+    wt = wt->FirstChildElement("button");
+    PushButtonPtr button=makePushButton(render,wt,font);
+    Action<PushButtonEvent> act(
+        [=](void*)->void{
+            this->setSettingWidgetState(false);
+            // std::cout<<"Go back clicked"<<std::endl;
+        },PushButtonEvent::ON_RELEASED,"Go back"
+    );
+    button->bindAction(act);
+    settingWidget->addChild(button);
+    //音乐开关
+    wt = wt->NextSiblingElement("button");
+    button = makePushButton(render,wt,font);
+    settingWidget->addChild(button);
+    //音效开关
+    wt = wt->NextSiblingElement("button");
+    button = makePushButton(render,wt,font);
+    settingWidget->addChild(button);
+}
+
+void  startMenuWidget::setSettingWidgetState(bool b){
+    isSettingWidgetShow = b;
+    return;
+}
+
+void startMenuWidget::draw(){
+    this->Widget::draw();
+    if(isSettingWidgetShow)
+        settingWidget->draw();
+    
+}
+
+void startMenuWidget::event_handle(SDL_Event*event){
+    if(isSettingWidgetShow){
+        settingWidget->event_handle(event);
+    }
+    else
+        this->Widget::event_handle(event);
+}
+
+void startMenuWidget::initButtonStartGame(Action<PushButtonEvent> act){
+    XMLElement *root = doc.RootElement();
+    XMLElement *but = root->FirstChildElement("button");
     PushButtonPtr button=makePushButton(render,but,font);
     Action<PushButtonEvent> A(
-        [](void*)->void{
+        [=](void*)->void{
             std::cout<<"Clicked"<<std::endl;
         },PushButtonEvent::ON_CLICKED
     );
     button->bindAction(A);
-    addChild(button);
-    but = but->NextSiblingElement("button");
-    button = makePushButton(render,but,font);
+    button->bindAction(act);
     addChild(button);
 }

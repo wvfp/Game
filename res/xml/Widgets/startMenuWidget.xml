@@ -4,27 +4,64 @@
     <size width="640" height="480"></size>
     <color r="255" g="255" b="255"></color>
     <label>
-        <position x="200" y="40"></position>
-        <size width="240" height="80"></size>
+        <position x="180" y="40"></position>
+        <size width="280" height="80"></size>
         <text>方块大冒险</text>
-        <font src="res/Fonts/game_ttf2.ttf"></font>
         <color r="255" g="255" b="255"></color>
     </label>
     <label>
         <position x="590" y="450"></position>
         <size width="35" height="10"></size>
         <text>作者: wvfp</text>
-        <font src="res/Fonts/game_ttf2.ttf"></font>
         <color r="255" g="255" b="255"></color>
     </label>
     <button>
-        <position x="270" y="300"></position>
+        <position x="260" y="300"></position>
         <size width="100" height="25"></size>
         <text x="0" y="0" w="100" h="25">开始游戏</text>
     </button>
     <button>
-        <position x="270" y="340"></position>
+        <position x="260" y="350"></position>
         <size width="100" height="25"></size>
         <text x="25" y="0" w="50" h="25">设置</text>
     </button>
+    <widget>
+        <name>SettingWidget</name>
+        <position x="210" y="200"></position> 
+        <color r="255" g="255" b="255"></color>
+        <size width="220" height="180"></size>
+        <label>
+            <position x="5" y="5"></position>
+            <size width="30" height="15"></size>
+            <text>设置</text>
+            <color r="255" g="255" b="255"></color>
+        </label>
+        <label>
+            <position x="40" y="50"></position>
+            <size width="40" height="20"></size>
+            <text>音乐</text>
+            <color r="255" g="255" b="255"></color>
+        </label>
+        <label>
+            <position x="40" y="80"></position>
+            <size width="40" height="20"></size>
+            <text>音效</text>
+            <color r="255" g="255" b="255"></color>
+        </label>
+        <button>
+            <position x="180" y="5"></position>
+            <size width="30" height="15"></size>
+            <text x="0" y="0" w="30" h="15">返回</text>
+        </button>
+        <button>
+            <position x="140" y="50"></position>
+            <size width="20" height="20"></size>
+            <text x="0" y="0" w="20" h="20">开</text>
+        </button>
+        <button>
+            <position x="140" y="80"></position>
+            <size width="20" height="20"></size>
+            <text x="0" y="0" w="20" h="20">开</text>
+        </button>
+    </widget>
 </widget>

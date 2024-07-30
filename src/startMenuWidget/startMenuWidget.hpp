@@ -13,7 +13,14 @@ public:
     void initLabel();
     void initPushButton();
     void updata();
+    void initSettingWidget();
+    void setSettingWidgetState(bool);
+    void draw();
+    void event_handle(SDL_Event*);
+    void initButtonStartGame(Action<PushButtonEvent>);
 private:
+    bool isSettingWidgetShow=false;
+    WidgetPtr settingWidget;
     XMLDocument doc;
 };
 

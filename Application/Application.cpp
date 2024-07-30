@@ -27,7 +27,7 @@ WindowPos_Size(pos_size){
     WinddowPtrDeleter);
     render = RendererPtr(SDL_CreateRenderer(window.get(),-1,0),RendererPtrDeleter);
     SDL_RenderSetLogicalSize(render.get(),640,480);
-    font = FontPtr(TTF_OpenFont("./res/Fonts/7.ttf",128),FontPtrDeleter);
+    font = FontPtr(TTF_OpenFont("./res/Fonts/FZKT.ttf",256),FontPtrDeleter);
     WindowColor = {0,0,0,0xff};
 }
 

@@ -1,0 +1,188 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Application",
+					"jsonFile" : "directory-Application-Debug-ca70b100cbb407141ca6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Application",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src/mainApplication",
+					"jsonFile" : "directory-src.mainApplication-Debug-10801b634efef10ed744.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/mainApplication",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/startMenuWidget",
+					"jsonFile" : "directory-src.startMenuWidget-Debug-b3b50e59ccf5077a4df0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/startMenuWidget",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "src/levelSelectWidget",
+					"jsonFile" : "directory-src.levelSelectWidget-Debug-90763fab417e8a407591.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/levelSelectWidget",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/gameWidget",
+					"jsonFile" : "directory-src.gameWidget-Debug-9e4010edb94ee6aaab08.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/gameWidget",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "SquareAdventure",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SquareAdventure::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SquareAdventure-Debug-9d6d65e9a5d83203416f.json",
+					"name" : "SquareAdventure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "app::@66720fd680612643f4de",
+					"jsonFile" : "target-app-Debug-a1110fdc681d2e3efe8b.json",
+					"name" : "app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "game::@b41db6bd19d8761bbaf1",
+					"jsonFile" : "target-game-Debug-7ea7768721eac0776e46.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "levelselect::@a2579a38fa80125d6381",
+					"jsonFile" : "target-levelselect-Debug-4c4adb83962ba3f1a157.json",
+					"name" : "levelselect",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "main::@06a2207dcc20b9b5ea79",
+					"jsonFile" : "target-main-Debug-2d9484416ef1eb463014.json",
+					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "startmenu::@d0eafac2b94222015a8a",
+					"jsonFile" : "target-startmenu-Debug-600fba3a3d9065d38238.json",
+					"name" : "startmenu",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wvfp/Projects/Game/build",
+		"source" : "/home/wvfp/Projects/Game"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
