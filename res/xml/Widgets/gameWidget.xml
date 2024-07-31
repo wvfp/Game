@@ -1,0 +1,12 @@
+<widget>
+    <position x="0" y="0"></position>
+    <size width="640" height="480"></size>
+    <color r="255" b="255" g="255"></color>
+    <name>gameWidget</name>
+    <button>
+        <position x="590" y="20"></position>
+        <size width="30" height="30"></size>
+        <img><![CDATA[./res/Pictures/playing.png]]></img>
+        <text x="0" y="0" w="0" h="0">暂停</text>
+    </button>   
+</widget>
