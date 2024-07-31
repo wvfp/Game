@@ -166,7 +166,7 @@ void PushButton::draw(){
         SDL_RenderFillRect(render.get(),&Pos_Size);
         //绘制Button 图标
         if(icon){
-            SDL_RenderCopy(render.get(),icon.get(),nullptr,&Pos_Size);
+            SDL_RenderCopy(render.get(),icon.get(),nullptr,nullptr);
         }
         //绘制Button 文本
         if(text){

@@ -23,6 +23,13 @@ void  mainApplication::init(){
 }
 
 void mainApplication::event_handle(SDL_Event* event){
+    if(W_State == WidgetState::LEVELSELECTWIDGET){
+        initGameWidget();
+        dynamic_cast<gameWidget*>((widgets[WidgetState::GAMEWIDGET]).get())->
+        initLevel(dynamic_cast<levelSelectWidget*>((widgets[WidgetState::LEVELSELECTWIDGET]).get())->getLevel());
+        if(dynamic_cast<levelSelectWidget*>((widgets[LEVELSELECTWIDGET]).get())->getLevel()>0)
+            W_State = WidgetState::GAMEWIDGET;
+    }
     widgets[W_State]->event_handle(event);
     return;
 }
@@ -63,5 +70,13 @@ void mainApplication::initLevelSelectWidget(){
     }
 }
 void mainApplication::initGameWidget(){
+    static bool inited=false;
+    if(!inited){
+        std::shared_ptr<gameWidget> w{new gameWidget(render,{0,0,640,480})};
+        w->setFont(font);
+        w->initGameWidget();
+        widgets.push_back(w);
+        inited = true;
+    }
 
 }

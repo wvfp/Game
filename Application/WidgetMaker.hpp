@@ -23,6 +23,6 @@ SDL_Point makePosition(XMLElement*);
 SDL_Rect  makeRect(XMLElement*);
 SDL_Color makeColor(XMLElement*);
 std::string makeText(XMLElement*);
-
+TexturePtr makeImage(RendererPtr,XMLElement*);
 
 #endif

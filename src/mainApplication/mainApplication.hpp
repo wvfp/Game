@@ -7,6 +7,7 @@
 #include <Label.hpp>
 #include "../startMenuWidget/startMenuWidget.hpp"
 #include "../levelSelectWidget/levelSelectWidget.hpp"
+#include "../gameWidget/gameWidget.hpp"
 #include <WidgetMaker.hpp>
 
 class mainApplication : public Application

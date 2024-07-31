@@ -91,15 +91,17 @@ PushButtonPtr makePushButton(RendererPtr render,XMLElement* but,FontPtr font){
         button->setFont(font);
         button->setText(str,{0,0,0,0xff});
         t_z = but->FirstChildElement("text");
-        attrib = t_z->FindAttribute("x");
-        t_r.x = attrib->IntValue();
-        attrib = t_z->FindAttribute("y");
-        t_r.y = attrib->IntValue();
-        attrib = t_z->FindAttribute("w");
-        t_r.w = attrib->IntValue();
-        attrib = t_z->FindAttribute("h");
-        t_r.h = attrib->IntValue();
-        button->setTextRect(t_r);
+        if(t_z){
+            attrib = t_z->FindAttribute("x");
+            t_r.x = attrib->IntValue();
+            attrib = t_z->FindAttribute("y");
+            t_r.y = attrib->IntValue();
+            attrib = t_z->FindAttribute("w");
+            t_r.w = attrib->IntValue();
+            attrib = t_z->FindAttribute("h");
+            t_r.h = attrib->IntValue();
+            button->setTextRect(t_r);
+        }
     }
     return button;
 }
@@ -165,3 +167,15 @@ std::string makeText(XMLElement*xml){
     return text;
 }
 
+TexturePtr makeImage(RendererPtr r,XMLElement*xml){
+    XMLElement* node=nullptr;
+    node=xml->FirstChildElement("img");
+    TexturePtr tex;
+    if(node){
+        std::string  path = node->GetText();
+        tex = LoadImageTexture(r,path);
+    }else{
+        std::cout<<"Warning Not Find node named img.\n"<<std::endl;
+    } 
+    return tex;
+}
