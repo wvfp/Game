@@ -25,6 +25,11 @@ void  mainApplication::init(){
 void mainApplication::event_handle(SDL_Event* event){
     if(W_State == WidgetState::LEVELSELECTWIDGET){
         initGameWidget();
+        Action<PushButtonEvent> act = Action<PushButtonEvent>([=](void*)->void{
+                this->ChangeWidget(WidgetState::LEVELSELECTWIDGET);
+                dynamic_cast<levelSelectWidget*>((this->widgets[LEVELSELECTWIDGET]).get())->setLevelValue(0);
+            },PushButtonEvent::ON_CLICKED);
+        dynamic_cast<gameWidget*>((widgets[WidgetState::GAMEWIDGET]).get())->initStopWidgetPushButton(act); 
         dynamic_cast<gameWidget*>((widgets[WidgetState::GAMEWIDGET]).get())->
         initLevel(dynamic_cast<levelSelectWidget*>((widgets[WidgetState::LEVELSELECTWIDGET]).get())->getLevel());
         if(dynamic_cast<levelSelectWidget*>((widgets[LEVELSELECTWIDGET]).get())->getLevel()>0)

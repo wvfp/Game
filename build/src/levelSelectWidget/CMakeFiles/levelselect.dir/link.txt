@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblevelselect.a CMakeFiles/levelselect.dir/levelSelectWidget.cpp.o
+/usr/bin/ranlib liblevelselect.a

@@ -3,6 +3,7 @@
 #include <Widget.hpp>
 #include <tinyxml2.h>
 #include <WidgetMaker.hpp>
+#include "../level/level.hpp"
 
 using namespace tinyxml2;
 

@@ -7,6 +7,7 @@ gameWidget::gameWidget(RendererPtr r,SDL_Rect r_t):Widget(r,r_t){
         std::cerr<<"ERROR: can't load file "<<xml_path<<"\n error in gameWidget initialize"<<std::endl;
         std::abort();
     }
+    stopping = false;
 }
 
 void gameWidget::initGameWidget(){
@@ -18,35 +19,60 @@ void gameWidget::initGameWidget(){
     std::string str=but->GetText();
     button->setIcon(str);
     addChild(button);
+    Action<PushButtonEvent> act{
+        [=](void*)->void{
+            setState(true);
+        },PushButtonEvent::ON_CLICKED
+    };
+    button->bindAction(act);
+    initStopWidget();
 }
 void gameWidget::initPushButton(){}
-void gameWidget::initStopWidget(){}
-void gameWidget::initStopWidgetPushButton(Action<PushButtonEvent>){}
+void gameWidget::initStopWidget(){
+    XMLElement* root = doc.RootElement();
+    XMLElement* wt = root->FirstChildElement("widget");
+    stopWidget = makeWidget(render,wt,font);
+    // addChild(stopWidget);
+}
+void gameWidget::initStopWidgetPushButton(Action<PushButtonEvent> act_gb){
+    XMLElement* root = doc.RootElement();
+    XMLElement* but = root->FirstChildElement("widget")->FirstChildElement("button");
+    PushButtonPtr button = makePushButton(render,but,font);
+    Action<PushButtonEvent> act{
+        [=](void*)->void{
+            setState(false);
+        },PushButtonEvent::ON_CLICKED
+    };
+    button->bindAction(act);
+    stopWidget->addChild(button);
+    but = but->NextSiblingElement("button");
+    button = makePushButton(render,but,font);
+    button->bindAction(act_gb);
+    act = Action<PushButtonEvent>(
+        [=](void*)->void{
+            setState(false);
+        },PushButtonEvent::ON_CLICKED
+    );
+    button -> bindAction(act);
+    stopWidget->addChild(button);
+}
 void gameWidget::initLevel(int){}
 void gameWidget::releaseLevel(){}
 void gameWidget::draw(){
-    // if(!isHide()){
-    //     SDL_Rect preRect;
-    //     if(parent){
-    //         SDL_RenderGetViewport(render.get(),&preRect);
-    //         SDL_Rect nowRect = getPrimaryRect();
-    //         SDL_Rect edge=nowRect;
-    //         edge.w=std::min(preRect.w+preRect.x,nowRect.w+nowRect.x)-nowRect.x;
-    //         edge.h=std::min(preRect.h+preRect.y,nowRect.h+nowRect.y)-nowRect.y;
-    //         SDL_RenderSetViewport(render.get(),&edge);
-    //     }
-    //     drawBase();
-    //     //绘制子widget
-    //     drawChild();
-    //     if(parent){
-    //         SDL_RenderSetViewport(render.get(),&preRect);
-    //     }
-    // }
     drawBase();
     for(auto i:ChildWidgetList)
         i->draw();
+    if(stopping)
+        stopWidget->draw();
 }
 void gameWidget::event_handle(SDL_Event *event){
-    for(auto i:ChildWidgetList)
-        i->event_handle(event);
+    if(stopping)
+        stopWidget->event_handle(event);
+    else
+        for(auto i:ChildWidgetList)
+            i->event_handle(event);
+}
+
+void gameWidget::setState(bool s){
+    stopping = s;
 }

@@ -77,6 +77,9 @@ public:
         font = f;
         return;
     }
+    void setFrameView(bool c=true){
+        _hide_frame = c;
+    }
 protected:
     //子类可见
     RendererPtr render;

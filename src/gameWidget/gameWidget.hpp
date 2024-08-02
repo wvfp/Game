@@ -5,6 +5,7 @@
 #include <PushButton.hpp>
 #include <tinyxml2.h>
 #include <WidgetMaker.hpp>
+#include "../../GameObject/GameObject.hpp"
 
 using namespace tinyxml2;
 
@@ -23,25 +24,13 @@ public:
     void releaseLevel();
     void draw();
     void event_handle(SDL_Event*);
+    void setState(bool);
 private:
     //LevelPtr level;
     WidgetPtr stopWidget;
     XMLDocument doc;
+    bool stopping;
 };
-
-// class Level{
-// public:
-//     Level(unsigned int l_id);
-//     void initLevel();
-//     void draw();
-//     void event_handle();
-//     unsigned int getLevelID(){
-//         return level_id;
-//     }
-
-// private:
-//     unsigned int level_id;
-// };
 
 
 #endif

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libapp.a CMakeFiles/app.dir/Application.cpp.o CMakeFiles/app.dir/FPSControler.cpp.o CMakeFiles/app.dir/Label.cpp.o CMakeFiles/app.dir/PushButton.cpp.o CMakeFiles/app.dir/Texture.cpp.o CMakeFiles/app.dir/Widget.cpp.o CMakeFiles/app.dir/WidgetMaker.cpp.o CMakeFiles/app.dir/tinyxml2.cpp.o CMakeFiles/app.dir/tools.cpp.o
+/usr/bin/ranlib libapp.a
