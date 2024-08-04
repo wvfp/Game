@@ -38,7 +38,6 @@ void levelSelectWidget::initPushButton(){
         Action<PushButtonEvent> a(
             [=](void*)->void{
                 this->setLevelValue(level_id);
-                std::cout<<"level selected: "<<getLevel()<<std::endl;
                 return;
             },PushButtonEvent::ON_RELEASED,id->Name()
         );

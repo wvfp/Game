@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmusicplayer.a CMakeFiles/musicplayer.dir/MusicPlayer.cpp.o
+/usr/bin/ranlib libmusicplayer.a

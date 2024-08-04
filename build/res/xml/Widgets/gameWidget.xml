@@ -1,0 +1,30 @@
+<widget>
+    <position x="0" y="0"></position>
+    <size width="640" height="480"></size>
+    <color r="255" b="255" g="255"></color>
+    <name>gameWidget</name>
+    <button>
+        <position x="590" y="20"></position>
+        <size width="30" height="30"></size>
+        <img><![CDATA[./res/Pictures/playing.png]]></img>
+        <text x="0" y="0" w="0" h="0">暂停</text>
+    </button>
+    <widget>
+        <position x="210" y="200"></position> 
+        <color r="255" g="255" b="255"></color>
+        <size width="220" height="180"></size>
+        <name>stopWidget</name>
+        <button>
+            <position x="130" y="150"></position>
+            <size width="40" height="20"></size>
+            <color r="255" b="255" g="255"></color>
+            <text  x="0" y="0" w="40" h="20">继续</text>
+        </button>
+        <button>
+            <position x="50" y="150"></position>
+            <size width="40" height="20"></size>
+            <color r="255" b="255" g="255"></color>
+            <text  x="0" y="0" w="40" h="20">退出</text>
+        </button>
+    </widget>  
+</widget>

@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblevel.a CMakeFiles/level.dir/level.cpp.o
+/usr/bin/ranlib liblevel.a

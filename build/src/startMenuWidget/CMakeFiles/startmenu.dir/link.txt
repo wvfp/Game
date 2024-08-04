@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstartmenu.a CMakeFiles/startmenu.dir/startMenuWidget.cpp.o
+/usr/bin/ranlib libstartmenu.a

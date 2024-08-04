@@ -1,0 +1,263 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Application",
+					"jsonFile" : "directory-Application-ca70b100cbb407141ca6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Application",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "GameObject",
+					"jsonFile" : "directory-GameObject-47afac17e497d92047f3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GameObject",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/mainApplication",
+					"jsonFile" : "directory-src.mainApplication-10801b634efef10ed744.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/mainApplication",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "src/startMenuWidget",
+					"jsonFile" : "directory-src.startMenuWidget-b3b50e59ccf5077a4df0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/startMenuWidget",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "src/levelSelectWidget",
+					"jsonFile" : "directory-src.levelSelectWidget-90763fab417e8a407591.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/levelSelectWidget",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "src/gameWidget",
+					"jsonFile" : "directory-src.gameWidget-9e4010edb94ee6aaab08.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/gameWidget",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/level",
+					"jsonFile" : "directory-src.level-0f2c7bec3d508f399777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/level",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "MusicPlayer",
+					"jsonFile" : "directory-MusicPlayer-7b43efb670479f1f0dd0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "MusicPlayer",
+					"targetIndexes" : 
+					[
+						7
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"name" : "SquareAdventure",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SquareAdventure::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SquareAdventure-ec6b492e24893c7b2d9b.json",
+					"name" : "SquareAdventure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "app::@66720fd680612643f4de",
+					"jsonFile" : "target-app-29b855f19c0b8dd6c8e7.json",
+					"name" : "app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "game::@b41db6bd19d8761bbaf1",
+					"jsonFile" : "target-game-451bf78a7b7f75f13080.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gobase::@98b4871319b56e37e6f4",
+					"jsonFile" : "target-gobase-3aae50fc58fc9c26382a.json",
+					"name" : "gobase",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "level::@014899ffab74b23035ec",
+					"jsonFile" : "target-level-2b87911f8579f52ee56e.json",
+					"name" : "level",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "levelselect::@a2579a38fa80125d6381",
+					"jsonFile" : "target-levelselect-9e9106e7464d67eddd8b.json",
+					"name" : "levelselect",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "main::@06a2207dcc20b9b5ea79",
+					"jsonFile" : "target-main-779052dc1cee8feee6c5.json",
+					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "musicplayer::@ff487c35ff25f10fe992",
+					"jsonFile" : "target-musicplayer-e7b2425bf72c91ff33ec.json",
+					"name" : "musicplayer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "startmenu::@d0eafac2b94222015a8a",
+					"jsonFile" : "target-startmenu-03303f60c138c6be85a3.json",
+					"name" : "startmenu",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wvfp/Projects/Game/build",
+		"source" : "/home/wvfp/Projects/Game"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

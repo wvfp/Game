@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgobase.a CMakeFiles/gobase.dir/Barrier.cpp.o CMakeFiles/gobase.dir/GameObject.cpp.o CMakeFiles/gobase.dir/Role.cpp.o
+/usr/bin/ranlib libgobase.a

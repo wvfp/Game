@@ -109,7 +109,6 @@ void startMenuWidget::initButtonStartGame(Action<PushButtonEvent> act){
     PushButtonPtr button=makePushButton(render,but,font);
     Action<PushButtonEvent> A(
         [=](void*)->void{
-            std::cout<<"Clicked"<<std::endl;
         },PushButtonEvent::ON_CLICKED
     );
     button->bindAction(A);
