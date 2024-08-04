@@ -1,18 +1,26 @@
 #include "level.hpp"
 
-Level::Level(unsigned int l_id){
-    level_id = l_id;
+Level::Level(RendererPtr r){
+    level_id =0;
     running = true;
+    render = r;   
 }
-void Level::initLevel(){
-
+void Level::initLevel(unsigned int){
+    SDL_Rect G = {0,400,640,80};
+    GameObjectPtr ptr=BarrierPtr(new Barrier(render,G));
+    GameObjectTable[ptr->getUID()] = ptr;    
 }
 void Level::draw(){
-    for(auto i:GameObjectTable)
-        i.second->draw();
+    if(running){
+        for(auto i:GameObjectTable)
+            i.second->draw();
+    }
 }
-void Level::event_handle(){
-
+void Level::event_handle(SDL_Event* event){
+    if(running){
+        for(auto i:GameObjectTable)
+            i.second->event_handle(event);
+    }
 }
 
 void Level::setLevelRunState(bool r){

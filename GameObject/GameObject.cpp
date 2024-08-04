@@ -7,6 +7,7 @@ GameObject::GameObject(RendererPtr r,SDL_Rect r_t){
 	wt = WidgetPtr(new Widget(r,r_t));
 	uid = num;
 	num++;
+	_hide = false;
 	return;
 }	
 void GameObject::draw(){
@@ -24,13 +25,13 @@ void GameObject::hideGO(bool b){
 bool GameObject::isHide(){
 	return _hide;
 }
-unsigned int GameObject::getUID()const{
+unsigned int GameObject::getUID(){
 	return uid;	
 }
 void GameObject::setPos_Size(const SDL_Rect& r){
 	Pos_Size = r;
 }
 
-SDL_Rect GameObject::getPos_Size(){
+SDL_Rect GameObject::getPos_Size()const{
 	return Pos_Size;
 }

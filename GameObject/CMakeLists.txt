@@ -2,4 +2,4 @@
 file(GLOB_RECURSE GO ./  *.cpp)
 
 #将FUNCS中所有cpp编译为funcs这个lib库
-add_library(gameobject ${GO})
+add_library(gobase ${GO})

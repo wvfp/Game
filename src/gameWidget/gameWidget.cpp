@@ -27,7 +27,7 @@ void gameWidget::initGameWidget(){
     button->bindAction(act);
     initStopWidget();
 }
-void gameWidget::initPushButton(){}
+
 void gameWidget::initStopWidget(){
     XMLElement* root = doc.RootElement();
     XMLElement* wt = root->FirstChildElement("widget");
@@ -56,23 +56,37 @@ void gameWidget::initStopWidgetPushButton(Action<PushButtonEvent> act_gb){
     button -> bindAction(act);
     stopWidget->addChild(button);
 }
-void gameWidget::initLevel(int){}
-void gameWidget::releaseLevel(){}
+
 void gameWidget::draw(){
     drawBase();
     for(auto i:ChildWidgetList)
         i->draw();
+    if(level)
+        level->draw();
     if(stopping)
         stopWidget->draw();
 }
 void gameWidget::event_handle(SDL_Event *event){
     if(stopping)
         stopWidget->event_handle(event);
-    else
+    else{
         for(auto i:ChildWidgetList)
             i->event_handle(event);
+        if(level)
+            level->event_handle(event);
+    }
 }
 
 void gameWidget::setState(bool s){
     stopping = s;
+}
+
+
+void gameWidget::releaseLevel(){
+    level->clearObject();
+}
+
+void gameWidget::initLevel(int l){
+    level = LevelPtr(new Level(render));
+    level->initLevel(l);
 }

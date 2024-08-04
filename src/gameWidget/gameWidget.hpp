@@ -6,11 +6,10 @@
 #include <tinyxml2.h>
 #include <WidgetMaker.hpp>
 #include "../../GameObject/GameObject.hpp"
+#include "../level/level.hpp"
 
 using namespace tinyxml2;
 
-class Level;
-using LevelPtr = std::shared_ptr<Level>;
 
 
 class gameWidget:public Widget{
@@ -26,7 +25,7 @@ public:
     void event_handle(SDL_Event*);
     void setState(bool);
 private:
-    //LevelPtr level;
+    LevelPtr level;
     WidgetPtr stopWidget;
     XMLDocument doc;
     bool stopping;
