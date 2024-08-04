@@ -24,6 +24,7 @@ public:
     virtual void draw();
     virtual void event_handle(SDL_Event*);
     virtual void present();
+    virtual void update();
     virtual ~Application();
     virtual void setColor(SDL_Color={0xff,0xff,0xff,0xff});
     void setDisplay();

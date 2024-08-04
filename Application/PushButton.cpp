@@ -1,8 +1,11 @@
 #include "PushButton.hpp"
 
+Mix_Chunk* PushButton::click =Mix_LoadWAV("./res/Sounds/click.wav");
 
 Action<PushButtonEvent> PushButton::defaultAction = Action<PushButtonEvent>(
-    [](void*)->void{/*std::cout<<"Hi"<<std::endl;*/},
+    [](void*)->void{
+       // Mix_PlayChannel(-1,click,0);
+    },
     PushButtonEvent::ON_NONE,
     std::string("default")
 );
@@ -52,6 +55,7 @@ void PushButton::actAction(){
         for(auto i:Action_List){
             if(i.getEventType()==PB::ON_CLICKED)
                 i();
+            Mix_PlayChannel(-1,click,0);
         }
         break;
     case PB::ON_PRESSED:

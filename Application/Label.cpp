@@ -57,7 +57,7 @@ void Label::draw(){
         }
         drawBase();
         if(texture){
-            SDL_RenderCopy(render.get(),texture.get(),nullptr,nullptr);
+            SDL_RenderCopy(render.get(),texture.get(),nullptr,&Pos_Size);
         }
         if(text){
             SDL_RenderCopy(render.get(),text.get(),nullptr,&text_rect);

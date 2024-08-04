@@ -4,6 +4,7 @@
 #include "Widget.hpp"
 #include "Texture.hpp"
 #include "tools.hpp"
+
 //响应函数类,用于PushButton类,传入bindAction()函数
 template<typename EventType>
 class Action{
@@ -37,12 +38,14 @@ public:
     void setName(std::string s){
         _name = s;
     }
+    void playChunk();
 private:
     EventType et;
     std::function<void(void*)> fun;
     std::string _name;
     static std::size_t Action_Size;
     unsigned int identify_number;
+
 };
 
 template<typename EventType>
@@ -97,6 +100,7 @@ private:
     SDL_Color text_Color;
     static Action<PushButtonEvent> defaultAction;
     bool changed = false;
+    static Mix_Chunk *click;
 };
 
 using PushButtonPtr = std::shared_ptr<PushButton>;

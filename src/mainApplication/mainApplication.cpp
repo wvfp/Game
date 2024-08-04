@@ -85,3 +85,7 @@ void mainApplication::initGameWidget(){
     }
 
 }
+
+void mainApplication::update(){
+    widgets[W_State]->update();
+}

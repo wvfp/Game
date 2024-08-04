@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 			}
 			app->event_handle(e);
 		}
+		app->update();
 		app->draw();
 		fps.tick();
 		app->present();

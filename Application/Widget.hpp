@@ -80,6 +80,7 @@ public:
     void setFrameView(bool c=true){
         _hide_frame = c;
     }
+    virtual void update(){}
 protected:
     //子类可见
     RendererPtr render;

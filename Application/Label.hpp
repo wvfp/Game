@@ -16,7 +16,7 @@ public:
     void setTextRect(SDL_Rect);
     void initializeFromXML();
     void draw();
-private:
+protected:
     TexturePtr text;
     std::string text_content;
     SDL_Rect text_rect;

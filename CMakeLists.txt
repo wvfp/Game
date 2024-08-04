@@ -24,6 +24,7 @@ add_subdirectory(src/startMenuWidget)
 add_subdirectory(src/levelSelectWidget)
 add_subdirectory(src/gameWidget)
 add_subdirectory(src/level)
+add_subdirectory(MusicPlayer)
 
 add_executable(SquareAdventure "src/main.cpp")
 
@@ -31,4 +32,4 @@ list(APPEND compile_flag "-Wall" "-O3" )
 
 target_compile_options(SquareAdventure PUBLIC ${compile_flag})
 
-target_link_libraries(SquareAdventure main startmenu levelselect game  level gobase SDL2main SDL2 SDL2_test app SDL2_image SDL2_ttf)
+target_link_libraries(SquareAdventure main  startmenu levelselect game  level gobase musicplayer SDL2main SDL2 SDL2_test app  SDL2_image SDL2_ttf SDL2_mixer) 

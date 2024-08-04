@@ -2,10 +2,10 @@
 #define _GAMEOBJECT_
 
 #include <Widget.hpp>
+#include <Label.hpp>
 
 class GameObject;
 using GameObjectPtr = std::shared_ptr<GameObject>;
-
 
 class GameObject{
 public:
@@ -17,6 +17,7 @@ public:
 	unsigned int getUID();
 	void setPos_Size(const SDL_Rect&);
 	SDL_Rect getPos_Size()const;
+	virtual void update();
 private:
 	static unsigned int num;
 	unsigned int uid;

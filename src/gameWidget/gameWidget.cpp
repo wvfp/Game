@@ -90,3 +90,7 @@ void gameWidget::initLevel(int l){
     level = LevelPtr(new Level(render));
     level->initLevel(l);
 }
+
+void gameWidget::update(){
+    level->update();
+}

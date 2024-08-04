@@ -3,6 +3,7 @@
 
 #include "../../GameObject/GameObject.hpp"
 #include "../../GameObject/Barrier.hpp"
+#include "../../GameObject/Role.hpp"
 class Level{
 public:
     Level(RendererPtr);
@@ -14,6 +15,7 @@ public:
     }
     void clearObject();
     void setLevelRunState(bool r);
+    void update();
 private:
     unsigned int level_id;
     bool running;

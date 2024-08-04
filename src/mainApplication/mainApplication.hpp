@@ -9,7 +9,7 @@
 #include "../levelSelectWidget/levelSelectWidget.hpp"
 #include "../gameWidget/gameWidget.hpp"
 #include <WidgetMaker.hpp>
-
+#include "../../MusicPlayer/MusicPlayer.hpp"
 class mainApplication : public Application
 {
 public:
@@ -19,6 +19,8 @@ public:
         init();
         running = true;
         W_State = STARTMENUWIDGET;
+        mus.loadMusic("./res/Sounds/background_music.mp3");
+        mus.play();
     }
     void draw();
     void init();
@@ -27,6 +29,7 @@ public:
     void initStartMenuWidget();
     void initLevelSelectWidget();
     void initGameWidget();
+    void update();
     // 当前处于的窗口的枚举
     enum WidgetState
     {
@@ -44,4 +47,5 @@ private:
     std::vector<WidgetPtr> widgets;
     // 游戏是否运行
     bool running;
+    MusicPlayer mus;
 };

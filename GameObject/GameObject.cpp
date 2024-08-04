@@ -4,10 +4,11 @@
 unsigned int GameObject::num=0;
 
 GameObject::GameObject(RendererPtr r,SDL_Rect r_t){
-	wt = WidgetPtr(new Widget(r,r_t));
+	wt = LabelPtr(new Label(r,r_t));
 	uid = num;
 	num++;
 	_hide = false;
+	Pos_Size = r_t;
 	return;
 }	
 void GameObject::draw(){
@@ -34,4 +35,6 @@ void GameObject::setPos_Size(const SDL_Rect& r){
 
 SDL_Rect GameObject::getPos_Size()const{
 	return Pos_Size;
-}
+}	
+
+void GameObject::update(){}

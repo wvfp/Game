@@ -69,3 +69,5 @@ void Application::setColor(SDL_Color c){
     WindowColor = c;
     return ;
 }
+
+void Application::update(){}

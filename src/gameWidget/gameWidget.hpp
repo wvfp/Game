@@ -24,6 +24,7 @@ public:
     void draw();
     void event_handle(SDL_Event*);
     void setState(bool);
+    void update();
 private:
     LevelPtr level;
     WidgetPtr stopWidget;
