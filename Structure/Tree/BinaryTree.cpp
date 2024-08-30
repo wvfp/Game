@@ -28,13 +28,14 @@ Tree<T> Tree<T>::copy(){
 }
 
 template<typename T>
-void Tree<T>::insert(T&){
-
+void Tree<T>::insert(T& val){
+	NodePtr<T> node = NodePtr<T>(nullptr,new Node(val));
+	root->add(node);	
 }
 
 template<typename T>
 void Tree<T>::search(const T&){
-
+	
 }
 
 template<typename T>

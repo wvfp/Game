@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/wvfp/Files/OpenGL/build",
+  "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/OpenGL.dir/src/main.cpp.o -c /home/wvfp/Files/OpenGL/src/main.cpp",
+  "file": "/home/wvfp/Files/OpenGL/src/main.cpp",
+  "output": "CMakeFiles/OpenGL.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/wvfp/Files/OpenGL/build",
+  "command": "/usr/bin/gcc -g -o CMakeFiles/OpenGL.dir/src/glad.c.o -c /home/wvfp/Files/OpenGL/src/glad.c",
+  "file": "/home/wvfp/Files/OpenGL/src/glad.c",
+  "output": "CMakeFiles/OpenGL.dir/src/glad.c.o"
+}
+]

@@ -1,0 +1,3 @@
+/home/wvfp/Files/OpenGL/build/CMakeFiles/OpenGL.dir
+/home/wvfp/Files/OpenGL/build/CMakeFiles/edit_cache.dir
+/home/wvfp/Files/OpenGL/build/CMakeFiles/rebuild_cache.dir

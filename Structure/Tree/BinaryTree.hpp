@@ -52,7 +52,15 @@ public:
 	Node(const T&&);
 	Node<T> operator=(const Node& rhs);
 	Node<T> copy();
-private: 
+	void* add(const Node&);
+	void setParent(NodePtr<T> p){
+		parent = p;
+	}
+	T& getValue(){
+		return value;
+	}
+private:
+	T value;
 	NodePtr<T> parent;
 	NodePtr<T> left;
 	NodePtr<T> right;
